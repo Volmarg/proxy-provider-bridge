@@ -1,0 +1,60 @@
+{
+    "type": "library",
+    "name": "volmarg/proxy-provider-bridge",
+    "description": "Bridge for communication with Proxy Provider",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.1",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "firebase/php-jwt": "^5.5",
+        "guzzlehttp/guzzle": "^7.2",
+        "lukasoppermann/http-status": "^3.1",
+        "monolog/monolog": "^2.2",
+        "symfony/console": "v6.0.3",
+        "symfony/dotenv": "v6.0.3",
+        "symfony/flex": "v2.1.4",
+        "symfony/framework-bundle": "v6.0.3",
+        "symfony/serializer": "v6.0.19",
+        "symfony/yaml": "v6.0.3"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": false
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "ProxyProviderBridge\\": "src/"
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*",
+        "symfony/translation-contracts": ">=3.0"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "5.4.*"
+        }
+    }
+}
